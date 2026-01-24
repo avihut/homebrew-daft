@@ -94,11 +94,11 @@ class Daft < Formula
 
   def caveats
     <<~EOS
-      To enable automatic cd into new worktrees, add to your shell config:
+      To complete setup (shell integration + shortcuts), run:
         daft setup
 
-      To install command shortcuts (gwtco, gwtcb, etc.):
-        daft setup shortcuts enable git
+      This enables automatic cd into new worktrees and installs
+      git-style shortcuts (gwtco, gwtcb, gwtcbm, etc.)
 
       For more information:
         daft --help
