@@ -1,23 +1,65 @@
 class Daft < Formula
   desc "A comprehensive Git extensions toolkit that enhances developer workflows, starting with powerful worktree management"
   homepage "https://github.com/avihut/daft"
-  version "1.0.0"
+  version "1.0.1"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/avihut/daft/releases/download/v1.0.0/daft-aarch64-apple-darwin.tar.xz"
-      sha256 "cc48aa115394b9d927ec56bec616b63d51ba56b4f233034e4513af27357f0467"
+      url "https://github.com/avihut/daft/releases/download/v1.0.1/daft-aarch64-apple-darwin.tar.xz"
+      sha256 "02d42d83eebbe5b554da0ae76d0ae1d9bd44bd5df3c00f05ee0e84d1c30bef8e"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/avihut/daft/releases/download/v1.0.0/daft-x86_64-apple-darwin.tar.xz"
-      sha256 "bb8c03b5b2c68f3535c150ae2755d5d9aa906c4115a39bce71094c2ea87e14fc"
+      url "https://github.com/avihut/daft/releases/download/v1.0.1/daft-x86_64-apple-darwin.tar.xz"
+      sha256 "50a8bb55a01395406a3428775114d4fb6b20ae69c0b58009932e9b39059bf331"
     end
   end
   license "MIT"
 
   BINARY_ALIASES = {
-    "aarch64-apple-darwin":  {},
-    "x86_64-apple-darwin":   {},
-    "x86_64-pc-windows-gnu": {},
+    "aarch64-apple-darwin":  {
+      daft: %w[
+        git-worktree-clone
+        git-worktree-init
+        git-worktree-checkout
+        git-worktree-checkout-branch
+        git-worktree-checkout-branch-from-default
+        git-worktree-prune
+        git-worktree-carry
+        git-worktree-fetch
+        git-worktree-flow-adopt
+        git-worktree-flow-eject
+        git-daft
+      ],
+    },
+    "x86_64-apple-darwin":   {
+      daft: %w[
+        git-worktree-clone
+        git-worktree-init
+        git-worktree-checkout
+        git-worktree-checkout-branch
+        git-worktree-checkout-branch-from-default
+        git-worktree-prune
+        git-worktree-carry
+        git-worktree-fetch
+        git-worktree-flow-adopt
+        git-worktree-flow-eject
+        git-daft
+      ],
+    },
+    "x86_64-pc-windows-gnu": {
+      "daft.exe": [
+        "git-worktree-clone.exe",
+        "git-worktree-init.exe",
+        "git-worktree-checkout.exe",
+        "git-worktree-checkout-branch.exe",
+        "git-worktree-checkout-branch-from-default.exe",
+        "git-worktree-prune.exe",
+        "git-worktree-carry.exe",
+        "git-worktree-fetch.exe",
+        "git-worktree-flow-adopt.exe",
+        "git-worktree-flow-eject.exe",
+        "git-daft.exe",
+      ],
+    },
   }.freeze
 
   def target_triple
