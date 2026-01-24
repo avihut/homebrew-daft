@@ -1,15 +1,15 @@
 class Daft < Formula
   desc "A comprehensive Git extensions toolkit that enhances developer workflows, starting with powerful worktree management"
   homepage "https://github.com/avihut/daft"
-  version "1.0.1"
+  version "1.0.2"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/avihut/daft/releases/download/v1.0.1/daft-aarch64-apple-darwin.tar.xz"
-      sha256 "02d42d83eebbe5b554da0ae76d0ae1d9bd44bd5df3c00f05ee0e84d1c30bef8e"
+      url "https://github.com/avihut/daft/releases/download/v1.0.2/daft-aarch64-apple-darwin.tar.xz"
+      sha256 "708f45400590392197bc3f3aad22636ff1268f98c5e7b9cabca0b754a76a42c5"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/avihut/daft/releases/download/v1.0.1/daft-x86_64-apple-darwin.tar.xz"
-      sha256 "50a8bb55a01395406a3428775114d4fb6b20ae69c0b58009932e9b39059bf331"
+      url "https://github.com/avihut/daft/releases/download/v1.0.2/daft-x86_64-apple-darwin.tar.xz"
+      sha256 "31b704e7178042f1a7e0e272239d21ed893c1678305b4dd4ed661db0a145024c"
     end
   end
   license "MIT"
@@ -90,18 +90,5 @@ class Daft < Formula
     # Install any leftover files in pkgshare; these are probably config or
     # sample files.
     pkgshare.install(*leftover_contents) unless leftover_contents.empty?
-  end
-
-  def caveats
-    <<~EOS
-      To complete setup (shell integration + shortcuts), run:
-        daft setup
-
-      This enables automatic cd into new worktrees and installs
-      git-style shortcuts (gwtco, gwtcb, gwtcbm, etc.)
-
-      For more information:
-        daft --help
-    EOS
   end
 end
