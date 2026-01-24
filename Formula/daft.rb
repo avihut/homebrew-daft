@@ -49,4 +49,17 @@ class Daft < Formula
     # sample files.
     pkgshare.install(*leftover_contents) unless leftover_contents.empty?
   end
+
+  def caveats
+    <<~EOS
+      To enable automatic cd into new worktrees, add to your shell config:
+        daft setup
+
+      To install command shortcuts (gwtco, gwtcb, etc.):
+        daft setup shortcuts enable git
+
+      For more information:
+        daft --help
+    EOS
+  end
 end
