@@ -1,15 +1,15 @@
 class Daft < Formula
   desc "A comprehensive Git extensions toolkit that enhances developer workflows, starting with powerful worktree management"
   homepage "https://github.com/avihut/daft"
-  version "1.0.13"
+  version "1.0.14"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/avihut/daft/releases/download/v1.0.13/daft-aarch64-apple-darwin.tar.xz"
-      sha256 "bc3361f3623dddb797c01688edfcec064ed6d0aa4a11a6b313f02289131ba1ef"
+      url "https://github.com/avihut/daft/releases/download/v1.0.14/daft-aarch64-apple-darwin.tar.xz"
+      sha256 "322d8048307868b76061279083a865948537f6587798e0c39bca751c9208afe9"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/avihut/daft/releases/download/v1.0.13/daft-x86_64-apple-darwin.tar.xz"
-      sha256 "cf53c0317e5b5fa7c3270e1de0161b260a127dea2c822766cfe24647117e6a94"
+      url "https://github.com/avihut/daft/releases/download/v1.0.14/daft-x86_64-apple-darwin.tar.xz"
+      sha256 "7962f3671d48651ed1c9a830e0834167e699bc0b06e86b72207da6c3fe61ba73"
     end
   end
   license "MIT"
@@ -85,14 +85,15 @@ class Daft < Formula
 
     # Homebrew will automatically install these, so we don't need to do that
     doc_files = Dir["README.*", "readme.*", "LICENSE", "LICENSE.*", "CHANGELOG.*"]
-    leftover_contents = Dir["*"] - doc_files
+    leftover_contents = Dir["*"] - doc_files - ["man"]
 
     # Install any leftover files in pkgshare; these are probably config or
     # sample files.
-    pkgshare.install(*leftover_contents) unless leftover_contents.empty?
 
     # Install pre-generated man pages
     man1.install Dir[buildpath/"man/*.1"]
+
+    pkgshare.install(*leftover_contents) unless leftover_contents.empty?
   end
 
   def caveats
