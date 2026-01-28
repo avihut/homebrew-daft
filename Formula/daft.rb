@@ -1,15 +1,15 @@
 class Daft < Formula
   desc "A comprehensive Git extensions toolkit that enhances developer workflows, starting with powerful worktree management"
   homepage "https://github.com/avihut/daft"
-  version "1.0.10"
+  version "1.0.11"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/avihut/daft/releases/download/v1.0.10/daft-aarch64-apple-darwin.tar.xz"
-      sha256 "b395a746bc92c3cdcdd7fcbbc71077945af64e9feefc9a40135efa930eb88957"
+      url "https://github.com/avihut/daft/releases/download/v1.0.11/daft-aarch64-apple-darwin.tar.xz"
+      sha256 "3613539c5838ff1160172b25ff00989ea36e366e3f484705bcc9dc2f3b516bed"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/avihut/daft/releases/download/v1.0.10/daft-x86_64-apple-darwin.tar.xz"
-      sha256 "ccf0a21e4a225fb411741de06e772bb46e77db67ef28fc0963e5b93d46422b71"
+      url "https://github.com/avihut/daft/releases/download/v1.0.11/daft-x86_64-apple-darwin.tar.xz"
+      sha256 "9a3b03577be2696fb97c7b74ded8dd66d5caf861e7d5493242cbf469e946a215"
     end
   end
   license "MIT"
@@ -93,13 +93,9 @@ class Daft < Formula
   end
 
   def post_install
-    # Generate and install man pages using the daft binary
-    Dir.mktmpdir do |dir|
-      system bin/"daft", "man", "--output-dir", dir
-      Dir["#{dir}/*.1"].each do |man_file|
-        man1.install man_file
-      end
-    end
+    # Generate man pages directly to the man directory
+    man1.mkpath
+    system bin/"daft", "man", "--output-dir", man1
   end
 
   def caveats
