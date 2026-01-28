@@ -1,0 +1,28 @@
+name: Notify daft repo of formula update
+
+on:
+  push:
+    paths:
+      - 'Formula/daft.rb'
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Extract version from formula
+        id: version
+        run: |
+          VERSION=$(grep -E '^\s*version\s+"' Formula/daft.rb | sed 's/.*version "\([^"]*\)".*/\1/')
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "Extracted version: $VERSION"
+
+      - name: Trigger test in daft repo
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ secrets.DAFT_DISPATCH_TOKEN }}
+          repository: avihut/daft
+          event-type: homebrew-formula-updated
+          client-payload: '{"version": "${{ steps.version.outputs.version }}"}'
