@@ -1,15 +1,15 @@
 class Daft < Formula
   desc "A comprehensive Git extensions toolkit that enhances developer workflows, starting with powerful worktree management"
   homepage "https://github.com/avihut/daft"
-  version "1.0.8"
+  version "1.0.9"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/avihut/daft/releases/download/v1.0.8/daft-aarch64-apple-darwin.tar.xz"
-      sha256 "660b5be59bb22372630fe52fb0eb6bfd67b11f4c1a39334d4ae2f175030ed22f"
+      url "https://github.com/avihut/daft/releases/download/v1.0.9/daft-aarch64-apple-darwin.tar.xz"
+      sha256 "1b6e0743e2a95c0fa65ff162fd3bade1ee1d9cc80426192e0d988db0cd6773f9"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/avihut/daft/releases/download/v1.0.8/daft-x86_64-apple-darwin.tar.xz"
-      sha256 "543e19b428170381d54d66a59bc2c0a9cf9197c94533911f5f080d7a907c17f3"
+      url "https://github.com/avihut/daft/releases/download/v1.0.9/daft-x86_64-apple-darwin.tar.xz"
+      sha256 "f663976c66f6c4f3990295585262ea2abaec11caef4b21d81d2325979842b41a"
     end
   end
   license "MIT"
@@ -90,6 +90,16 @@ class Daft < Formula
     # Install any leftover files in pkgshare; these are probably config or
     # sample files.
     pkgshare.install(*leftover_contents) unless leftover_contents.empty?
+  end
+
+  def post_install
+    # Generate and install man pages using the daft binary
+    Dir.mktmpdir do |dir|
+      system bin/"daft", "man", "--output-dir", dir
+      Dir["#{dir}/*.1"].each do |man_file|
+        man1.install man_file
+      end
+    end
   end
 
   def caveats
