@@ -1,15 +1,15 @@
 class Daft < Formula
   desc "A comprehensive Git extensions toolkit that enhances developer workflows, starting with powerful worktree management"
   homepage "https://github.com/avihut/daft"
-  version "1.0.11"
+  version "1.0.12"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/avihut/daft/releases/download/v1.0.11/daft-aarch64-apple-darwin.tar.xz"
-      sha256 "3613539c5838ff1160172b25ff00989ea36e366e3f484705bcc9dc2f3b516bed"
+      url "https://github.com/avihut/daft/releases/download/v1.0.12/daft-aarch64-apple-darwin.tar.xz"
+      sha256 "1129b24113ac7d63c4d20fa4f8a5df865b6dbe6170a7e97c7a3055c14ade95bb"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/avihut/daft/releases/download/v1.0.11/daft-x86_64-apple-darwin.tar.xz"
-      sha256 "9a3b03577be2696fb97c7b74ded8dd66d5caf861e7d5493242cbf469e946a215"
+      url "https://github.com/avihut/daft/releases/download/v1.0.12/daft-x86_64-apple-darwin.tar.xz"
+      sha256 "51a4defeaa96996f5b19e0128a6ecfec769d2693662b05e25a97d94cde953db8"
     end
   end
   license "MIT"
@@ -91,9 +91,8 @@ class Daft < Formula
     # sample files.
     pkgshare.install(*leftover_contents) unless leftover_contents.empty?
 
-    # Generate man pages (must be in install block to be symlinked by Homebrew)
-    man1.mkpath
-    system bin/"daft", "man", "--output-dir", man1
+    # Install pre-generated man pages
+    man1.install Dir[buildpath/"man/*.1"]
   end
 
   def caveats
