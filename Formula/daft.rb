@@ -1,15 +1,15 @@
 class Daft < Formula
   desc "A comprehensive Git extensions toolkit that enhances developer workflows, starting with powerful worktree management"
   homepage "https://github.com/avihut/daft"
-  version "1.0.7"
+  version "1.0.8"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/avihut/daft/releases/download/v1.0.7/daft-aarch64-apple-darwin.tar.xz"
-      sha256 "8a396a958da8b70561ee790230d2ba5fb532e0a3b05b64bee95b0cc733114f3f"
+      url "https://github.com/avihut/daft/releases/download/v1.0.8/daft-aarch64-apple-darwin.tar.xz"
+      sha256 "660b5be59bb22372630fe52fb0eb6bfd67b11f4c1a39334d4ae2f175030ed22f"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/avihut/daft/releases/download/v1.0.7/daft-x86_64-apple-darwin.tar.xz"
-      sha256 "bc6c9e10dba15b34cf6e744bbd200179b0aa32c74e583d9b12c97d9ee2e9e272"
+      url "https://github.com/avihut/daft/releases/download/v1.0.8/daft-x86_64-apple-darwin.tar.xz"
+      sha256 "543e19b428170381d54d66a59bc2c0a9cf9197c94533911f5f080d7a907c17f3"
     end
   end
   license "MIT"
