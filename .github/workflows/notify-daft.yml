@@ -22,7 +22,7 @@ jobs:
       - name: Trigger test in daft repo
         uses: peter-evans/repository-dispatch@v3
         with:
-          token: ${{ secrets.DAFT_DISPATCH_TOKEN }}
+          token: ${{ secrets.HOMEBREW_TAP_TOKEN }}
           repository: avihut/daft
           event-type: homebrew-formula-updated
           client-payload: '{"version": "${{ steps.version.outputs.version }}"}'
