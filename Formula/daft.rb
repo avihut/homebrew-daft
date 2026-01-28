@@ -90,10 +90,8 @@ class Daft < Formula
     # Install any leftover files in pkgshare; these are probably config or
     # sample files.
     pkgshare.install(*leftover_contents) unless leftover_contents.empty?
-  end
 
-  def post_install
-    # Generate man pages directly to the man directory
+    # Generate man pages (must be in install block to be symlinked by Homebrew)
     man1.mkpath
     system bin/"daft", "man", "--output-dir", man1
   end
