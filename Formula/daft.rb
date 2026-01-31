@@ -1,15 +1,15 @@
 class Daft < Formula
   desc "A comprehensive Git extensions toolkit that enhances developer workflows, starting with powerful worktree management"
   homepage "https://github.com/avihut/daft"
-  version "1.0.15"
+  version "1.0.16"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/avihut/daft/releases/download/v1.0.15/daft-aarch64-apple-darwin.tar.xz"
-      sha256 "d78bf6ddf63c0a0b12a6c4e28e8dfa82657aab4e01c18da40533f5c04ba1057b"
+      url "https://github.com/avihut/daft/releases/download/v1.0.16/daft-aarch64-apple-darwin.tar.xz"
+      sha256 "33f494174279d25f6d7db6e32d2249c0ccebb5875a57f7f829b798d1b966daae"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/avihut/daft/releases/download/v1.0.15/daft-x86_64-apple-darwin.tar.xz"
-      sha256 "57eeeea40781995632bff773c8bdd1b744e7b80f53b9439df720fbf4a289b754"
+      url "https://github.com/avihut/daft/releases/download/v1.0.16/daft-x86_64-apple-darwin.tar.xz"
+      sha256 "b831ea863c5a0a4fbf0487772fc21192903b0a55add7d6fc8f4ae0a5d8b9ef07"
     end
   end
   license "MIT"
@@ -98,12 +98,6 @@ class Daft < Formula
 
   def caveats
     <<~EOS
-      DEPRECATED: This tap (avihut/daft) is deprecated.
-      Please migrate to the new tap:
-
-        brew untap avihut/daft
-        brew install avihut/tap/daft
-
       To complete setup (shell integration + shortcuts), run:
         daft setup
 
