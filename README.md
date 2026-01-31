@@ -1,26 +1,16 @@
-# Homebrew Tap for daft
+# DEPRECATED - Homebrew Tap for daft
 
-Git worktree workflow tools for developers.
+> **This tap is deprecated.** Please use [`avihut/tap`](https://github.com/avihut/homebrew-tap) instead.
 
-## Installation
-
-```bash
-brew install avihut/daft/daft
-```
-
-Or tap first:
+## Migration
 
 ```bash
-brew tap avihut/daft
-brew install daft
+brew untap avihut/daft
+brew install avihut/tap/daft
 ```
 
-## Updating
+## New Tap
 
-```bash
-brew update && brew upgrade daft
-```
+The new tap is at [github.com/avihut/homebrew-tap](https://github.com/avihut/homebrew-tap).
 
-## Source
-
-Main repository: https://github.com/avihut/daft
+This tap will continue to receive updates during the transition period but will eventually stop being updated.

@@ -98,6 +98,12 @@ class Daft < Formula
 
   def caveats
     <<~EOS
+      DEPRECATED: This tap (avihut/daft) is deprecated.
+      Please migrate to the new tap:
+
+        brew untap avihut/daft
+        brew install avihut/tap/daft
+
       To complete setup (shell integration + shortcuts), run:
         daft setup
 
