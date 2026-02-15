@@ -1,15 +1,15 @@
 class Daft < Formula
   desc "A comprehensive Git extensions toolkit that enhances developer workflows, starting with powerful worktree management"
   homepage "https://github.com/avihut/daft"
-  version "1.0.23"
+  version "1.0.24"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/avihut/daft/releases/download/v1.0.23/daft-aarch64-apple-darwin.tar.xz"
-      sha256 "60f6307a32f23c9a91e5e94e54c9d1e61603e17f17d64f033a3ea787bf21b8b1"
+      url "https://github.com/avihut/daft/releases/download/v1.0.24/daft-aarch64-apple-darwin.tar.xz"
+      sha256 "7400160901c71a385cd090f9d869ebac644bbbdd4d8c5a55aa2a653a2f7e5191"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/avihut/daft/releases/download/v1.0.23/daft-x86_64-apple-darwin.tar.xz"
-      sha256 "8ee0544a4f5c110f7d52707480e24c984c2936798da6cc81df4488a94802614d"
+      url "https://github.com/avihut/daft/releases/download/v1.0.24/daft-x86_64-apple-darwin.tar.xz"
+      sha256 "e3ca8c9e3d831e4b4ccebb2ac54bd9aa11368a192d06d4138c146d44639eef45"
     end
   end
   license "MIT"
@@ -21,7 +21,6 @@ class Daft < Formula
         git-worktree-init
         git-worktree-checkout
         git-worktree-checkout-branch
-        git-worktree-checkout-branch-from-default
         git-worktree-prune
         git-worktree-carry
         git-worktree-fetch
@@ -36,7 +35,6 @@ class Daft < Formula
         git-worktree-init
         git-worktree-checkout
         git-worktree-checkout-branch
-        git-worktree-checkout-branch-from-default
         git-worktree-prune
         git-worktree-carry
         git-worktree-fetch
@@ -51,7 +49,6 @@ class Daft < Formula
         "git-worktree-init.exe",
         "git-worktree-checkout.exe",
         "git-worktree-checkout-branch.exe",
-        "git-worktree-checkout-branch-from-default.exe",
         "git-worktree-prune.exe",
         "git-worktree-carry.exe",
         "git-worktree-fetch.exe",
