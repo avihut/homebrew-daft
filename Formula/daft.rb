@@ -1,15 +1,15 @@
 class Daft < Formula
   desc "A comprehensive Git extensions toolkit that enhances developer workflows, starting with powerful worktree management"
   homepage "https://github.com/avihut/daft"
-  version "1.0.24"
+  version "1.0.25"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/avihut/daft/releases/download/v1.0.24/daft-aarch64-apple-darwin.tar.xz"
-      sha256 "7400160901c71a385cd090f9d869ebac644bbbdd4d8c5a55aa2a653a2f7e5191"
+      url "https://github.com/avihut/daft/releases/download/v1.0.25/daft-aarch64-apple-darwin.tar.xz"
+      sha256 "5e8dcfcc5d84ad1c98ab17077618908d5a606b77f42156b81261fd5480bed401"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/avihut/daft/releases/download/v1.0.24/daft-x86_64-apple-darwin.tar.xz"
-      sha256 "e3ca8c9e3d831e4b4ccebb2ac54bd9aa11368a192d06d4138c146d44639eef45"
+      url "https://github.com/avihut/daft/releases/download/v1.0.25/daft-x86_64-apple-darwin.tar.xz"
+      sha256 "3679abd1253d2b279e968f75eae9cfe600df7cce83603ea1747936b86e49699d"
     end
   end
   license "MIT"
@@ -99,7 +99,7 @@ class Daft < Formula
         daft setup
 
       This enables automatic cd into new worktrees and installs
-      git-style shortcuts (gwtco, gwtcb, gwtcbm, etc.)
+      git-style shortcuts (gwtco, gwtcb, etc.)
 
       For more information:
         daft --help
