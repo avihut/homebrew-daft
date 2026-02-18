@@ -1,21 +1,31 @@
 class Daft < Formula
   desc "A comprehensive Git extensions toolkit that enhances developer workflows, starting with powerful worktree management"
   homepage "https://github.com/avihut/daft"
-  version "1.0.27"
+  version "1.0.28"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/avihut/daft/releases/download/v1.0.27/daft-aarch64-apple-darwin.tar.xz"
-      sha256 "84622d702afe1a6f5c78925e036a7e24ddf008b03128bb3b13ab9a2ecc1563f8"
+      url "https://github.com/avihut/daft/releases/download/v1.0.28/daft-aarch64-apple-darwin.tar.xz"
+      sha256 "c11b305a1e6a11246bd0103dc57fa697690732d8278e2f7845247145fbd9305e"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/avihut/daft/releases/download/v1.0.27/daft-x86_64-apple-darwin.tar.xz"
-      sha256 "5647adc70f5bcb10c9b92661bea149bd46dd63cf3994c86600244359a260b523"
+      url "https://github.com/avihut/daft/releases/download/v1.0.28/daft-x86_64-apple-darwin.tar.xz"
+      sha256 "23ff04b5a114dda56db9378e86720eb9b27dc1b501b31ebfee5a65804ac1e0e6"
+    end
+  end
+  if OS.linux?
+    if Hardware::CPU.arm?
+      url "https://github.com/avihut/daft/releases/download/v1.0.28/daft-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "91a824984101b1a1280c88ddc8560341ff3b20015096ed981202d2513dbe57ed"
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/avihut/daft/releases/download/v1.0.28/daft-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "c95a66e1222fe2b53cb1c0e68a34086312295e8774c5c8b61842ca4ba56b40ca"
     end
   end
   license "MIT"
 
   BINARY_ALIASES = {
-    "aarch64-apple-darwin":  {
+    "aarch64-apple-darwin":      {
       daft: %w[
         git-worktree-clone
         git-worktree-init
@@ -29,7 +39,7 @@ class Daft < Formula
         git-daft
       ],
     },
-    "x86_64-apple-darwin":   {
+    "aarch64-unknown-linux-gnu": {
       daft: %w[
         git-worktree-clone
         git-worktree-init
@@ -43,7 +53,21 @@ class Daft < Formula
         git-daft
       ],
     },
-    "x86_64-pc-windows-gnu": {
+    "x86_64-apple-darwin":       {
+      daft: %w[
+        git-worktree-clone
+        git-worktree-init
+        git-worktree-checkout
+        git-worktree-checkout-branch
+        git-worktree-prune
+        git-worktree-carry
+        git-worktree-fetch
+        git-worktree-flow-adopt
+        git-worktree-flow-eject
+        git-daft
+      ],
+    },
+    "x86_64-pc-windows-gnu":     {
       "daft.exe": [
         "git-worktree-clone.exe",
         "git-worktree-init.exe",
@@ -55,6 +79,20 @@ class Daft < Formula
         "git-worktree-flow-adopt.exe",
         "git-worktree-flow-eject.exe",
         "git-daft.exe",
+      ],
+    },
+    "x86_64-unknown-linux-gnu":  {
+      daft: %w[
+        git-worktree-clone
+        git-worktree-init
+        git-worktree-checkout
+        git-worktree-checkout-branch
+        git-worktree-prune
+        git-worktree-carry
+        git-worktree-fetch
+        git-worktree-flow-adopt
+        git-worktree-flow-eject
+        git-daft
       ],
     },
   }.freeze
@@ -77,6 +115,8 @@ class Daft < Formula
   def install
     bin.install "daft" if OS.mac? && Hardware::CPU.arm?
     bin.install "daft" if OS.mac? && Hardware::CPU.intel?
+    bin.install "daft" if OS.linux? && Hardware::CPU.arm?
+    bin.install "daft" if OS.linux? && Hardware::CPU.intel?
 
     install_binary_aliases!
 
