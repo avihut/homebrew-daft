@@ -1,25 +1,25 @@
 class Daft < Formula
   desc "A comprehensive Git extensions toolkit that enhances developer workflows, starting with powerful worktree management"
   homepage "https://github.com/avihut/daft"
-  version "1.0.31"
+  version "1.0.32"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/avihut/daft/releases/download/v1.0.31/daft-aarch64-apple-darwin.tar.xz"
-      sha256 "5328b727afdde26bede36176404c4a429b70ab06dd911c31972614d1955bd1fb"
+      url "https://github.com/avihut/daft/releases/download/v1.0.32/daft-aarch64-apple-darwin.tar.xz"
+      sha256 "35e094f47bb6a6e66b04306925f246428f5eae895423aaf3a14c6d8100130c82"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/avihut/daft/releases/download/v1.0.31/daft-x86_64-apple-darwin.tar.xz"
-      sha256 "de12d6572cdc29b442bb71f99c633e562028e992010f713463c24c7e0b01d0bc"
+      url "https://github.com/avihut/daft/releases/download/v1.0.32/daft-x86_64-apple-darwin.tar.xz"
+      sha256 "f19a7c2dc123c10e86b823531c4ed8d880b8e0c4fc8699e088da9abf632429c4"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/avihut/daft/releases/download/v1.0.31/daft-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "1c01c6027431b5173da62d75823215fbfb22b9b5c0875639c2b20ab5f4bbba19"
+      url "https://github.com/avihut/daft/releases/download/v1.0.32/daft-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "61a6d20c88e8c4dcc9039422467686dcca69812e5faa105e621fdfc74683b448"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/avihut/daft/releases/download/v1.0.31/daft-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "7448c03215b9b66f9f58395c803ac5d426b3ae9119e9c76164ce3375eb04b1f4"
+      url "https://github.com/avihut/daft/releases/download/v1.0.32/daft-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "a0578b013a6c572648372267e163343124b1553600bd44e2c3ff63a78a3fa771"
     end
   end
   license "MIT"
@@ -37,6 +37,8 @@ class Daft < Formula
         git-worktree-flow-adopt
         git-worktree-flow-eject
         git-daft
+        daft-remove
+        daft-rename
       ],
     },
     "aarch64-unknown-linux-gnu": {
@@ -51,6 +53,8 @@ class Daft < Formula
         git-worktree-flow-adopt
         git-worktree-flow-eject
         git-daft
+        daft-remove
+        daft-rename
       ],
     },
     "x86_64-apple-darwin":       {
@@ -65,6 +69,8 @@ class Daft < Formula
         git-worktree-flow-adopt
         git-worktree-flow-eject
         git-daft
+        daft-remove
+        daft-rename
       ],
     },
     "x86_64-pc-windows-gnu":     {
@@ -79,6 +85,8 @@ class Daft < Formula
         "git-worktree-flow-adopt.exe",
         "git-worktree-flow-eject.exe",
         "git-daft.exe",
+        "daft-remove.exe",
+        "daft-rename.exe",
       ],
     },
     "x86_64-unknown-linux-gnu":  {
@@ -93,6 +101,8 @@ class Daft < Formula
         git-worktree-flow-adopt
         git-worktree-flow-eject
         git-daft
+        daft-remove
+        daft-rename
       ],
     },
   }.freeze
