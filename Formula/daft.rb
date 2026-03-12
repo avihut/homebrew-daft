@@ -1,25 +1,25 @@
 class Daft < Formula
   desc "A comprehensive Git extensions toolkit that enhances developer workflows, starting with powerful worktree management"
   homepage "https://github.com/avihut/daft"
-  version "1.0.35"
+  version "1.0.36"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/avihut/daft/releases/download/v1.0.35/daft-aarch64-apple-darwin.tar.xz"
-      sha256 "70cbb6a2381c2b9cb13b310901262d1a07d60d1dcf9b9fc10dc3f163e622a92b"
+      url "https://github.com/avihut/daft/releases/download/v1.0.36/daft-aarch64-apple-darwin.tar.xz"
+      sha256 "8fa380af7c4c966f1c58edd4fa225f8d920c6d59d78351a0030d8ac7aa430eeb"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/avihut/daft/releases/download/v1.0.35/daft-x86_64-apple-darwin.tar.xz"
-      sha256 "37ad8be56988e4149a6c43b5480fa1dc38133100a7dd366c0fdbea2d3698a17e"
+      url "https://github.com/avihut/daft/releases/download/v1.0.36/daft-x86_64-apple-darwin.tar.xz"
+      sha256 "2d83f446e1e61096c97ea16df4e17598d867301378db18e0f66941e50243adf1"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/avihut/daft/releases/download/v1.0.35/daft-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "528dfb6a3e042b3fe8adb931b63777ca705c73d1ec41f78ed2fa64c6bf0a71b6"
+      url "https://github.com/avihut/daft/releases/download/v1.0.36/daft-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "242e7f649f9ccbb461c106f0f5ff6f9f403ab94c96751d4cafae4e61abf8cd8a"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/avihut/daft/releases/download/v1.0.35/daft-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "d36baa66e22f4922fa1d310149aae9bcb305f1a3bfa16b43e089ad7c1a71de3c"
+      url "https://github.com/avihut/daft/releases/download/v1.0.36/daft-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "8d7fb8e25f9a483f10a2cc384dfb8815f038f724394a073dac590e39b72e3b04"
     end
   end
   license "MIT"
@@ -30,12 +30,15 @@ class Daft < Formula
         git-worktree-clone
         git-worktree-init
         git-worktree-checkout
-        git-worktree-checkout-branch
+        git-worktree-branch
+        git-worktree-branch-delete
         git-worktree-prune
         git-worktree-carry
         git-worktree-fetch
         git-worktree-flow-adopt
         git-worktree-flow-eject
+        git-worktree-list
+        git-sync
         git-daft
         daft-remove
         daft-rename
@@ -46,12 +49,15 @@ class Daft < Formula
         git-worktree-clone
         git-worktree-init
         git-worktree-checkout
-        git-worktree-checkout-branch
+        git-worktree-branch
+        git-worktree-branch-delete
         git-worktree-prune
         git-worktree-carry
         git-worktree-fetch
         git-worktree-flow-adopt
         git-worktree-flow-eject
+        git-worktree-list
+        git-sync
         git-daft
         daft-remove
         daft-rename
@@ -62,12 +68,15 @@ class Daft < Formula
         git-worktree-clone
         git-worktree-init
         git-worktree-checkout
-        git-worktree-checkout-branch
+        git-worktree-branch
+        git-worktree-branch-delete
         git-worktree-prune
         git-worktree-carry
         git-worktree-fetch
         git-worktree-flow-adopt
         git-worktree-flow-eject
+        git-worktree-list
+        git-sync
         git-daft
         daft-remove
         daft-rename
@@ -78,12 +87,15 @@ class Daft < Formula
         "git-worktree-clone.exe",
         "git-worktree-init.exe",
         "git-worktree-checkout.exe",
-        "git-worktree-checkout-branch.exe",
+        "git-worktree-branch.exe",
+        "git-worktree-branch-delete.exe",
         "git-worktree-prune.exe",
         "git-worktree-carry.exe",
         "git-worktree-fetch.exe",
         "git-worktree-flow-adopt.exe",
         "git-worktree-flow-eject.exe",
+        "git-worktree-list.exe",
+        "git-sync.exe",
         "git-daft.exe",
         "daft-remove.exe",
         "daft-rename.exe",
@@ -94,12 +106,15 @@ class Daft < Formula
         git-worktree-clone
         git-worktree-init
         git-worktree-checkout
-        git-worktree-checkout-branch
+        git-worktree-branch
+        git-worktree-branch-delete
         git-worktree-prune
         git-worktree-carry
         git-worktree-fetch
         git-worktree-flow-adopt
         git-worktree-flow-eject
+        git-worktree-list
+        git-sync
         git-daft
         daft-remove
         daft-rename
