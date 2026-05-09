@@ -1,28 +1,28 @@
 class Daft < Formula
   desc "A comprehensive Git extensions toolkit that enhances developer workflows, starting with powerful worktree management"
   homepage "https://github.com/avihut/daft"
-  version "1.11.1"
+  version "1.12.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/avihut/daft/releases/download/v1.11.1/daft-aarch64-apple-darwin.tar.xz"
-      sha256 "e530a22f42bc16cd70a91c4b0e6b58cde27bf6d399597e999776f270f7d06aa7"
+      url "https://github.com/avihut/daft/releases/download/v1.12.0/daft-aarch64-apple-darwin.tar.xz"
+      sha256 "b11da7cd57262e282ea470ea556f8e4fdb1593623fe961b1636aa49854daca0b"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/avihut/daft/releases/download/v1.11.1/daft-x86_64-apple-darwin.tar.xz"
-      sha256 "bb72cef5c0e9b14d6b7e504d2d38015a5cbe331ef240727008d9bc89188a4581"
+      url "https://github.com/avihut/daft/releases/download/v1.12.0/daft-x86_64-apple-darwin.tar.xz"
+      sha256 "a714add88546aea19348d7bde4c11aee487392668ca0534c18a5f8f95234b9c2"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/avihut/daft/releases/download/v1.11.1/daft-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "853cb2a305fdd3f019f594cc2519f2c6d176d590dcfc78b42a63fb3561d46c9b"
+      url "https://github.com/avihut/daft/releases/download/v1.12.0/daft-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "399e26698f49fa969e10e2011ef1245399e8634f48c71f4a72172ccb8e2d68e4"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/avihut/daft/releases/download/v1.11.1/daft-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "763843425d172d5ee6b6a28f5267c94d5e98d40a6f666a10dc595c1ffaecdba8"
+      url "https://github.com/avihut/daft/releases/download/v1.12.0/daft-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "e00a5af45a8ba5caf8613cbfe39a5c5a36b2472c828c94f9984e810d0772875b"
     end
   end
-  license "MIT"
+  license any_of: ["MIT", "Apache-2.0"]
 
   BINARY_ALIASES = {
     "aarch64-apple-darwin":      {
