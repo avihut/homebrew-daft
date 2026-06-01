@@ -1,25 +1,25 @@
 class Daft < Formula
   desc "A comprehensive Git extensions toolkit that enhances developer workflows, starting with powerful worktree management"
   homepage "https://github.com/avihut/daft"
-  version "1.14.5"
+  version "1.15.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/avihut/daft/releases/download/v1.14.5/daft-aarch64-apple-darwin.tar.xz"
-      sha256 "7e5d4f85b5290befdd2e0034547fe669f338a2ff193b057872da8e1b3371c944"
+      url "https://github.com/avihut/daft/releases/download/v1.15.0/daft-aarch64-apple-darwin.tar.xz"
+      sha256 "6c6aac64a88ae05622160482c935cf02be8cd7cb770bed552648f936a7c3635e"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/avihut/daft/releases/download/v1.14.5/daft-x86_64-apple-darwin.tar.xz"
-      sha256 "3c2f549016a0fa73a5fef2520da9dcc6f1d000883823a3b14b4b4c12cafd6d0c"
+      url "https://github.com/avihut/daft/releases/download/v1.15.0/daft-x86_64-apple-darwin.tar.xz"
+      sha256 "b58036542c597926930ec28db875903328592e164c149c800c2b60228311f8af"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/avihut/daft/releases/download/v1.14.5/daft-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "4e0bc2c3c16f322c09e8ee9f403a988cae4c1bea12b578243e5c5f354da5be54"
+      url "https://github.com/avihut/daft/releases/download/v1.15.0/daft-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "5ddfcda713e6f677d3377880c7eea16b8bd75fde1978e9d25e750f7ad6b0486a"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/avihut/daft/releases/download/v1.14.5/daft-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "90fc756dbd1c1b51de31934d4220327fea62e57048b1bfd1ed865b77c8a07b07"
+      url "https://github.com/avihut/daft/releases/download/v1.15.0/daft-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "9cb98b4869c851b73bb129e357e234156f5f606a48d3683c734324e0bfa8587a"
     end
   end
   license any_of: ["MIT", "Apache-2.0"]
@@ -170,8 +170,8 @@ class Daft < Formula
 
   def caveats
     <<~EOS
-      To complete setup (shell integration + shortcuts), run:
-        daft setup
+      To activate daft (shell integration + shortcuts), run:
+        daft activate
 
       This enables automatic cd into new worktrees and installs
       git-style shortcuts (gwtco, gwtcb, etc.)
