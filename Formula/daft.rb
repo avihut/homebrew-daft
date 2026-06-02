@@ -1,25 +1,25 @@
 class Daft < Formula
   desc "A comprehensive Git extensions toolkit that enhances developer workflows, starting with powerful worktree management"
   homepage "https://github.com/avihut/daft"
-  version "1.15.2"
+  version "1.16.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/avihut/daft/releases/download/v1.15.2/daft-aarch64-apple-darwin.tar.xz"
-      sha256 "7ae04a079cdf854068bd06bc0d5d07e28a47e5fd83939722437659580e8ad0b5"
+      url "https://github.com/avihut/daft/releases/download/v1.16.0/daft-aarch64-apple-darwin.tar.xz"
+      sha256 "0913387a8934f1661cd63b2af443559a2d38dabbead3f39d6f2f76893da618f6"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/avihut/daft/releases/download/v1.15.2/daft-x86_64-apple-darwin.tar.xz"
-      sha256 "3f771e85313bf70615e25fabacc7a4066c4be1b07632660a292367718102a4af"
+      url "https://github.com/avihut/daft/releases/download/v1.16.0/daft-x86_64-apple-darwin.tar.xz"
+      sha256 "fd5b425c69fdacfe4fef91a63ed09785962ce6a29d572bf093d27fc0d608a414"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/avihut/daft/releases/download/v1.15.2/daft-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "c20bbe479c99257acd0fba9fa145a6c38c22e05d12b62445bb44306eb8419f93"
+      url "https://github.com/avihut/daft/releases/download/v1.16.0/daft-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "8812662c9c25c162d8b82059e1cb46c3e02047c43effa9617fd96c86081c0e0a"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/avihut/daft/releases/download/v1.15.2/daft-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "6cc3812795f6ade28b2139d1977c80f6746f2c280bd339b352240581d8b48047"
+      url "https://github.com/avihut/daft/releases/download/v1.16.0/daft-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "7d8647aa89c842141bfc30021346a53c25ab10fed2d63c0f0315b48000413b8e"
     end
   end
   license any_of: ["MIT", "Apache-2.0"]
