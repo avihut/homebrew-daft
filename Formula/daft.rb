@@ -1,25 +1,25 @@
 class Daft < Formula
   desc "A comprehensive Git extensions toolkit that enhances developer workflows, starting with powerful worktree management"
   homepage "https://github.com/avihut/daft"
-  version "1.22.0"
+  version "1.23.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/avihut/daft/releases/download/v1.22.0/daft-aarch64-apple-darwin.tar.xz"
-      sha256 "11cc2f4cca16e202e59d5037649c603100dc6012793829cb718a41b4f7563c1d"
+      url "https://github.com/avihut/daft/releases/download/v1.23.0/daft-aarch64-apple-darwin.tar.xz"
+      sha256 "8f800d34af8fe298d639a6e41e366207bde452361c70c900d44509a869852533"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/avihut/daft/releases/download/v1.22.0/daft-x86_64-apple-darwin.tar.xz"
-      sha256 "7c64f0ca3aff6cff19fc00b0a4524f3ba0ff0524fd857f154c7afec95aedc204"
+      url "https://github.com/avihut/daft/releases/download/v1.23.0/daft-x86_64-apple-darwin.tar.xz"
+      sha256 "5d1d6a47a016e4c114652db0c8dd056f9aa45f9322732bf87dad70a3b8fa446d"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/avihut/daft/releases/download/v1.22.0/daft-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "482ca35cb6bc57152f932f3fdb077d0dc3939452e3ac88a87f706344f2b17795"
+      url "https://github.com/avihut/daft/releases/download/v1.23.0/daft-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "e2fa4fb32efba5c5a2c4810c6c927718036344beb06d01d60e5e81d003f22bb2"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/avihut/daft/releases/download/v1.22.0/daft-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "23b0d6abb2465061f0e4e705e4ca16c51b9a5baa2ea7542d36a64b203ea952e6"
+      url "https://github.com/avihut/daft/releases/download/v1.23.0/daft-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "9dde54a16cd6118e5e1ceeb120b6499da643f33a96c3158814be36c09baa61b6"
     end
   end
   license any_of: ["MIT", "Apache-2.0"]
@@ -39,6 +39,7 @@ class Daft < Formula
         git-worktree-flow-eject
         git-worktree-list
         git-worktree-sync
+        git-worktree-push
         git-daft
         daft-go
         daft-start
@@ -60,6 +61,7 @@ class Daft < Formula
         git-worktree-flow-eject
         git-worktree-list
         git-worktree-sync
+        git-worktree-push
         git-daft
         daft-go
         daft-start
@@ -81,6 +83,7 @@ class Daft < Formula
         git-worktree-flow-eject
         git-worktree-list
         git-worktree-sync
+        git-worktree-push
         git-daft
         daft-go
         daft-start
@@ -102,6 +105,7 @@ class Daft < Formula
         "git-worktree-flow-eject.exe",
         "git-worktree-list.exe",
         "git-worktree-sync.exe",
+        "git-worktree-push.exe",
         "git-daft.exe",
         "daft-go.exe",
         "daft-start.exe",
@@ -123,6 +127,7 @@ class Daft < Formula
         git-worktree-flow-eject
         git-worktree-list
         git-worktree-sync
+        git-worktree-push
         git-daft
         daft-go
         daft-start
