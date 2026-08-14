@@ -1,25 +1,25 @@
 class Daft < Formula
   desc "A comprehensive Git extensions toolkit that enhances developer workflows, starting with powerful worktree management"
   homepage "https://github.com/avihut/daft"
-  version "1.27.1"
+  version "1.27.2"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/avihut/daft/releases/download/v1.27.1/daft-aarch64-apple-darwin.tar.xz"
-      sha256 "fef0a0ff9e62e9665b4ef4057a7e1284d64529a06b814f34096646d34eef0d5e"
+      url "https://github.com/avihut/daft/releases/download/v1.27.2/daft-aarch64-apple-darwin.tar.xz"
+      sha256 "bb1c45733433ace51faf16e32f683c13c0f981be406a5c0198e1860edf826741"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/avihut/daft/releases/download/v1.27.1/daft-x86_64-apple-darwin.tar.xz"
-      sha256 "ed70e8975d8556266bd317d840e97ae4233232dd65e2d0ee25c54202e5522b43"
+      url "https://github.com/avihut/daft/releases/download/v1.27.2/daft-x86_64-apple-darwin.tar.xz"
+      sha256 "9df2119954883f3a1faa95ac7a72cc3abec6408ba63d0a80df578e0f39297115"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/avihut/daft/releases/download/v1.27.1/daft-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "61f4d17c3f52fbdb82ad7f10086549db0a0f16832c1de83484b093ce4399eccd"
+      url "https://github.com/avihut/daft/releases/download/v1.27.2/daft-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "2876811f19696335d1d1b6509f10b4d34c62f58b01eebc993c582a9da764c3ac"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/avihut/daft/releases/download/v1.27.1/daft-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "cbd6f00fd905c467f0642c884e1f6b879e0d234e4cb5b39023e66499f6e64ca5"
+      url "https://github.com/avihut/daft/releases/download/v1.27.2/daft-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "40b80fabcff639e163a204bd63c5d731951706e51056d4c658d48e0b2f884428"
     end
   end
   license any_of: ["MIT", "Apache-2.0"]
@@ -158,10 +158,18 @@ class Daft < Formula
   end
 
   def install
-    bin.install "daft" if OS.mac? && Hardware::CPU.arm?
-    bin.install "daft" if OS.mac? && Hardware::CPU.intel?
-    bin.install "daft" if OS.linux? && Hardware::CPU.arm?
-    bin.install "daft" if OS.linux? && Hardware::CPU.intel?
+    if OS.mac? && Hardware::CPU.arm?
+      bin.install "daft"
+    end
+    if OS.mac? && Hardware::CPU.intel?
+      bin.install "daft"
+    end
+    if OS.linux? && Hardware::CPU.arm?
+      bin.install "daft"
+    end
+    if OS.linux? && Hardware::CPU.intel?
+      bin.install "daft"
+    end
 
     install_binary_aliases!
 
